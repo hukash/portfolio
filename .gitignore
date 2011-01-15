@@ -1,0 +1,9 @@
+*.pyc
+*.pyo
+*~
+*.swp
+*.orig
+.DS_Store
+*.eprj
+eggs
+dist
