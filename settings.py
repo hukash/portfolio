@@ -1,6 +1,8 @@
 # Django settings for portfolio project.
 
-import os.path.realpath(os.path.dirname(__file__))
+import os
+
+SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -109,8 +111,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
+    'blackbook',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
