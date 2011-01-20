@@ -3,6 +3,7 @@
 *~
 *.swp
 *.orig
+*.db
 .DS_Store
 *.eprj
 eggs
