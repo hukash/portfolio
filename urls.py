@@ -5,8 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Example:
-    # (r'^portfolio/', include('portfolio.foo.urls')),
+    (r'^blackbook/', include('blackbook.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
