@@ -93,6 +93,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -109,6 +110,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'debug_toolbar',
     'blackbook',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
@@ -136,6 +138,8 @@ LOGGING = {
         },
     }
 }
+INTERNAL_IPS = ('127.0.0.1',)
+DEBUG_TOOLBAR_CONFIG = {'INTERCEPT_REDIRECTS': False}
 try:
     from local_settings import *
 except ImportError:
