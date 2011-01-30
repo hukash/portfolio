@@ -12,7 +12,7 @@ class Category(models.Model):
     def __unicode__(self):
         return self.name
 
-class Picture(models.Model):
+class Photo(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
     image = models.ImageField(upload_to='pictures')
