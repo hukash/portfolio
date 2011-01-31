@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from PIL import Image
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
@@ -25,3 +27,15 @@ class Photo(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def save(self, size=(1000, 500)):
+        if not self.id and not self.image:
+            return
+
+        super(Photo, self).save()
+
+        filename = self.image.path
+        image = Image.open(filename)
+
+        image.thumbnail(size, Image.ANTIALIAS)
+        image.save(filename)
