@@ -1,12 +1,52 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
+
+{% block load-slider %}
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+</script>
+{% endblock %}
 
 {% block title %}{{ block.super }} - All Photos {% endblock %}
 
 {% block content %}
 <h2>All Pictures</h2>
-<ul>
+    <!-- Content -->
+    <div id="slider">
     {% for photo in object_list %}
-    <li>{{ photo.slug }} - {{ photo.title }}</li>
+        <img src="{{ photo.image.url }}" alt="{{ photo.slug }}" title="{{ photo.title }}" />
     {% endfor %}
-</ul>
+    </div>
+{% endblock %}
+{% block slider %}
+<!-- Nivo Slider --> 
+<script type="text/javascript" src="/media/js/lib/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript" charset="utf-8">
+  // Define your slider option    
+  $(window).load(function() {
+    $('#slider').nivoSlider({
+      effect:'fade',
+      animSpeed:200, // Slide transition speed
+      pauseTime:10000,
+      startSlide:0, // Set starting Slide (0 index)
+      directionNav:true, // Next & Prev
+      directionNavHide:true, // Only show on hover
+      controlNav:true, // 1,2,3...
+      controlNavThumbs:false, // Use thumbnails for Control Nav
+      controlNavThumbsFromRel:false, // Use image rel for thumbs
+      controlNavThumbsSearch: '.jpg', // Replace this with...
+      controlNavThumbsReplace: '_thumb.jpg', // ...this in thumb Image src
+      keyboardNav:true, // Use left & right arrows
+      pauseOnHover:true, // Stop animation while hovering
+      manualAdvance:false, // Force manual transitions
+      captionOpacity:0.8, // Universal caption opacity
+      beforeChange: function(){},
+      afterChange: function(){},
+      slideshowEnd: function(){}, //Triggers after all slides have been shown
+      lastSlide: function(){}, //Triggers when last slide is shown
+      afterLoad: function (){} //Triggers when slider has loaded
+    });
+  });
+</script>
 {% endblock %}

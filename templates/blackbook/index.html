@@ -6,8 +6,6 @@
 <h2>All Categories</h2>
 <ul>
     {% for category in object_list %}
-    <li>{{ category.slug }} - {{ category.description }}</li>
-    <li><a href="category/{{ category.slug }}">{{ category.name }}</a></li>
     <li><a href="{% url blackbook.views.show_category category.slug %}">{{ category.name }}</a></li>
     {% endfor %}
 </ul>

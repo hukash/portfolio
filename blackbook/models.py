@@ -15,7 +15,7 @@ class Category(models.Model):
 class Photo(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
-    image = models.ImageField(upload_to='pictures')
+    image = models.ImageField(upload_to='photos')
     category = models.ManyToManyField(Category)
     photographer = models.ForeignKey(User)
     location = models.CharField(max_length=100, blank=True)
