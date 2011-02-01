@@ -28,7 +28,7 @@ class Photo(models.Model):
     def __unicode__(self):
         return self.title
 
-    def save(self, size=(1000, 500)):
+    def save(self, size=(1000, 580)):
         if not self.id and not self.image:
             return
 

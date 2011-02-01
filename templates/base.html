@@ -1,12 +1,54 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>{% block title %}Blackbook{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>{% block title %}{% endblock %} / Christopher Pilarski</title>
+  
+  <meta name="description" content="The World according to Christopher Pilarski">
+  <meta name="author" content="hukash@gmail.com">
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/media/css/nivo-slider.css" type="text/css" media="screen" charset="utf-8">  
+  <link rel="stylesheet" href="/media/css/style.css" type="text/css" media="screen" charset="utf-8">  
 </head>
 <body>
-    <h1>Blackbook</h1>
-    {% block content %}{% endblock %}
+    {% block load-slider %}{% endblock %}
+    {% block content %}{% endblock %}  
+    {% block flatpage.content %}{% endblock %}  
+<!-- Javascript for teh worldz -->
+  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="/media/js/lib/jquery-1.4.4.js"%3E%3C/script%3E'))</script>
+    {% block slider %}{% endblock %}
+    <!-- Default website script -->
+    <script type="text/javascript" src="/media/js/script.js"></script>
+  
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+  <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
+       change the UA-XXXXX-X to be your site's ID -->
+  <script>
+   var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+   (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+   })(document, 'script');
+  </script>
+  
 </body>
 </html>
