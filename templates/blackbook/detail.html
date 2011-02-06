@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ block.super }} - {{ object.title }}{% endblock %}
+<article>
+<header>
+    <h1>{% block title %}{{ block.super }} - {{ object.title }}{% endblock %}</h1>
+</header>
+
 {% block content %}
     <h2>{{ object.title }}</h2>
     <img src="{{ object.image.url }}">
 {% endblock %}
-
+</article>
