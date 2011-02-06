@@ -1,3 +1,6 @@
  TODO - Portfolio-app
 ======================
-
+- integrate statcifiles app: http://docs.djangoproject.com/en/dev/howto/static-files/
+- integrate Grappelli
+- define a new model, view and template for vimeo integration
+- add active boolean for videos and photos

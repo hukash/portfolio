@@ -1,7 +1,7 @@
 from django.http import HttpResponse, Http404
 from django.template import Context, loader
 
-from blackbook.models import Category, Photo
+from blackbook.models import Category, Photo, Video
 
 def index(request):
     categories = Category.objects.all()
@@ -19,10 +19,22 @@ def detail(render, slug):
 	return HttpResponse(template.render(context))
 
 def show_category(render, slug):
-    try:
-        photos = Photo.objects.filter(category__slug__exact=slug)
-    except Photo.DoesNotExist:
-        raise Http404
+    photos = Photo.objects.filter(
+                category__slug__exact=slug
+             ).filter(
+                active=True
+             )
     template = loader.get_template('blackbook/show-category.html')
     context = Context({'object_list': photos})
+    return HttpResponse(template.render(context))
+
+def show_video(render, slug):
+    try:
+        video = Video.objects.get(slug=slug)
+        splitted_url = video.url.split('/')
+        url_id = splitted_url[-1]
+    except Video.DoesNotExist:
+        raise Http404
+    template = loader.get_template('blackbook/video.html')
+    context = Context({'object': video, 'url_id': url_id})
     return HttpResponse(template.render(context))

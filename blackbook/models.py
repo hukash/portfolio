@@ -21,14 +21,15 @@ class Photo(models.Model):
     category = models.ManyToManyField(Category)
     photographer = models.ForeignKey(User)
     location = models.CharField(max_length=100, blank=True)
-    date_taken= models.DateField()
+    active = models.BooleanField(default=True)
+    date_taken = models.DateField()
     date_created = models.DateTimeField(auto_now_add=True, editable=False)
     date_updated = models.DateTimeField(auto_now=True, editable=False)
 
     def __unicode__(self):
         return self.title
 
-    def save(self, size=(1000, 580)):
+    def save(self, size=(1060, 585)):
         if not self.id and not self.image:
             return
 
@@ -39,3 +40,14 @@ class Photo(models.Model):
 
         image.thumbnail(size, Image.ANTIALIAS)
         image.save(filename)
+
+class Video(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True)
+    url = models.URLField(verify_exists=True)
+    active = models.BooleanField(default=True)
+    date_created = models.DateTimeField(auto_now_add=True, editable=False)
+    date_updated = models.DateTimeField(auto_now=True, editable=False)
+
+    def __unicode__(self):
+        return self.title

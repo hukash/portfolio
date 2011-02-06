@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ block.super }} - {{ object.title }}{% endblock %}
+{% block content %}
+<h2>{{ object.title }}</h2>
+<iframe src="http://player.vimeo.com/video/{{ url_id }}?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="80%" height="80%" frameborder="0"></iframe>
+<p><a href="http://vimeo.com/{{ url_id }}">Link</a></p> 
+{% endblock %}
+
+<!-- Youtube embedded player //-->
+<iframe title="YouTube video player" width="480" height="390" src="http://www.youtube.com/embed/WArLq-LZdwI" frameborder="0" allowfullscreen></iframe>
