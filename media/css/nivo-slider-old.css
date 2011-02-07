@@ -1,8 +1,8 @@
 /*
- * jQuery Nivo Slider v2.4
+ * jQuery Nivo Slider v2.3
  * http://nivo.dev7studios.com
  *
- * Copyright 2011, Gilbert Pellegrom
+ * Copyright 2010, Gilbert Pellegrom
  * Free to use and abuse under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
  * 
@@ -62,23 +62,48 @@
 }
 /* Direction nav styles (e.g. Next & Prev) */
 .nivo-directionNav a {
+   	display:block;
+	width:32px;
+	height:34px;
+	background:url(../img/arrows.png) no-repeat;
+	text-indent:-9999px;
+	border:0; 
+
 	position:absolute;
 	top:45%;
 	z-index:99;
 	cursor:pointer;
 }
 .nivo-prevNav {
-	left:0px;
+	left:10px;
 }
 .nivo-nextNav {
-	right:0px;
+	background:url(../img/arrows.png) no-repeat;
+	text-indent:-9999px;
+	background-position:-32px 0;
+	right:10px;
 }
+
+.nivo-controlNav {
+	position:absolute;
+	left:47%;
+	bottom:-30px;
+}
+
 /* Control nav styles (e.g. 1,2,3...) */
 .nivo-controlNav a {
-	position:relative;
+    position:relative;
 	z-index:99;
 	cursor:pointer;
+    display:block;
+	width:10px;
+	height:10px;
+	background:url(../img/bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+	float:left;
 }
 .nivo-controlNav a.active {
-	font-weight:bold;
+	background-position:-10px 0;
 }
