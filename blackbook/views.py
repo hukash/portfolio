@@ -24,8 +24,12 @@ def show_category(render, slug):
              ).filter(
                 active=True
              )
+    try:
+        category = Category.objects.get(slug=slug)
+    except Category.DoesNotExist:
+        raise Http404
     template = loader.get_template('blackbook/show-category.html')
-    context = Context({'object_list': photos})
+    context = Context({'object_list': photos, 'category': category})
     return HttpResponse(template.render(context))
 
 def show_video(render, slug):

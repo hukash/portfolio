@@ -32,8 +32,11 @@
 </head>
 
 <body>
-    <h1>Christopher Pilarski</h1>
-
+    <section>
+    <header id="title"><h1 >Christopher Pilarski</h1></header>
+        <nav id="main-nav">Photos | Videos | Contact</nav>
+    </section>
+  <hr/>
   {% block content %}{% endblock %}  
   {% block flatpage.content %}{% endblock %}  
 
@@ -42,7 +45,6 @@
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.5.0.js"%3E%3C/script%3E'))</script>
-  
   
   <!-- scripts concatenated and minified via ant build script-->
   <script src="/media/js/plugins.js"></script>
