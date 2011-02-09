@@ -31,6 +31,7 @@ def show_category(render, slug):
 def show_video(render, slug):
     try:
         video = Video.objects.get(slug=slug)
+        # add youtube id resolver
         splitted_url = video.url.split('/')
         url_id = splitted_url[-1]
     except Video.DoesNotExist:
