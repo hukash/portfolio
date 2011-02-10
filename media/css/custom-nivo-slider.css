@@ -6,7 +6,7 @@
 #slider {
 	position:relative;
 	/* margin:30px 30px 60px 30px; */
-    margin:30px auto;
+    margin:20px auto;
     width: 816px;
 	background:#202834 url(/media/img/loading.gif) no-repeat 50% 50%;
 	-moz-box-shadow:0px 0px 10px #333;
@@ -17,7 +17,7 @@
 	position:absolute;
 	top:0px;
 	left:0px;
-	display:none;
+    display:none;
 }
 #slider a {
 	border:0;
