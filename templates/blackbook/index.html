@@ -3,10 +3,13 @@
 {% block title %}Categories{{ block.super }}{% endblock %}
 
 {% block content %}
-<h2>All Categories</h2>
-<ul>
-    {% for category in object_list %}
-    <li><a href="{% url blackbook.views.show_category category.slug %}">{{ category.name }}</a></li>
-    {% endfor %}
-</ul>
+<article>
+    <nav>
+        <ul>
+            <li>Categories: </li>
+            {% for category in object_list %}
+            <li><a href="{% url blackbook.views.show_category category.slug %}">{{ category.name }}</a> | </li>
+            {% endfor %}
+        </ul>
+</article>
 {% endblock %}

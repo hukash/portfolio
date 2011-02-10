@@ -32,11 +32,17 @@
 </head>
 
 <body>
-    <section>
-    <header id="title"><h1 >Christopher Pilarski</h1></header>
-        <nav id="main-nav">Photos | Videos | Contact</nav>
-    </section>
-  <hr/>
+    <header>
+        <div id="title">
+            <h1>Christopher Pilarski</h1>
+        </div>
+        <nav>
+            <a href="{% url blackbook.views.index %}">Home</a> |
+            <a href="">Photos</a> |
+            <a href="">Videos</a> |
+            <a href="">Contact</a>
+    </header>
+    <hr/>
   {% block content %}{% endblock %}  
   {% block flatpage.content %}{% endblock %}  
 
