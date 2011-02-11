@@ -64,10 +64,12 @@ STATIC_URL = '/static/'
 # URL prefix for admin media -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
-ADMIN_MEDIA_PREFIX = '/static/admin/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 
 # A list of locations of additional static files
-STATICFILES_DIRS = ()
+STATICFILES_DIRS = (
+    #os.path.join(SITE_ROOT, "templates/blackbook/static/"),
+)
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -110,6 +112,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.flatpages',
     'debug_toolbar',
@@ -141,6 +144,7 @@ LOGGING = {
     }
 }
 INTERNAL_IPS = ('127.0.0.1',)
+GRAPPELLI_ADMIN_TITLE = "Portfolio Administration"
 DEBUG_TOOLBAR_CONFIG = {'INTERCEPT_REDIRECTS': False}
 try:
     from local_settings import *
