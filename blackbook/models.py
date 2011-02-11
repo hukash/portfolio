@@ -3,9 +3,16 @@ from django.contrib.auth.models import User
 
 from PIL import Image
 
+
+
 class Category(models.Model):
+    FORMAT_CHOICES = (
+        (u'landscape', u'Landscape'),
+        (u'portrait', u'Portrait'),
+    )    
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
+    format = models.CharField(max_length=10, choices=FORMAT_CHOICES)
     description = models.TextField(blank=True)
 
     class Meta:

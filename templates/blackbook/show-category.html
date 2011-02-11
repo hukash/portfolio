@@ -17,10 +17,12 @@
     </nav>
     <h3>{{ category.name }}</h3>
     <!-- Content -->
-    <div id="slider">
-    {% for photo in object_list %}
-        <img src="{{ photo.image.url }}" alt="{{ photo.slug }}" title="{{ photo.title }}" />
-    {% endfor %}
+    <div id="{{ category.format }}">
+        <div id="slider">
+        {% for photo in object_list %}
+            <img src="{{ photo.image.url }}" alt="{{ photo.slug }}" title="{{ photo.title }}" />
+        {% endfor %}
+        </div>
     </div>
 <article>
 {% endblock %}
@@ -32,8 +34,8 @@
   // Define your slider option    
   $(window).load(function() {
     $('#slider').nivoSlider({
-      effect:'fade',
-      animSpeed:200, // Slide transition speed
+effect:'fade',
+      animSpeed:500, // Slide transition speed
       pauseTime:10000,
       startSlide:0, // Set starting Slide (0 index)
       directionNav:true, // Next & Prev

@@ -3,11 +3,23 @@
  * with the main download before including this file.
  */
 
+#landscape {
+    position: relative;
+    margin: 20px auto;
+    width: 816px;
+}
+
+#portrait {
+    position: relative;
+    margin: 20px auto;
+    width: 370px;
+    text-align: center;
+
+}
 #slider {
 	position:relative;
 	/* margin:30px 30px 60px 30px; */
-    margin:20px auto;
-    width: 816px;
+    margin: auto;
 	background:#202834 url(/media/img/loading.gif) no-repeat 50% 50%;
 	-moz-box-shadow:0px 0px 10px #333;
 	-webkit-box-shadow:0px 0px 10px #333;
@@ -18,9 +30,6 @@
 	top:0px;
 	left:0px;
     display:none;
-}
-#slider a {
-	border:0;
 }
 
 .nivo-controlNav {
