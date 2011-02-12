@@ -68,7 +68,7 @@ ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 
 # A list of locations of additional static files
 STATICFILES_DIRS = (
-    #os.path.join(SITE_ROOT, "templates/blackbook/static/"),
+    os.path.join(SITE_ROOT, "templates/blackbook/static/"),
 )
 
 # List of finder classes that know how to find static files in

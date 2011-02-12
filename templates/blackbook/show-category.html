@@ -2,9 +2,8 @@
 
 {% block title %}Blackbook{{ block.super }}{% endblock %}
 {% block slider-css %}
-    <link rel="stylesheet" href="/media/css/nivo-slider.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/nivo-slider.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/custom-nivo-slider.css">
-    <!--<link rel="stylesheet" href="/media/css/custom-nivo-slider.css">-->
 {% endblock%}
 {% block content %}
 <article>
@@ -30,7 +29,7 @@
 
 {% block slider %}
 <!-- Nivo Slider --> 
-<script type="text/javascript" src="/media/js/libs/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/libs/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript" charset="utf-8">
   // Define your slider option    
   $(window).load(function() {
