@@ -38,9 +38,14 @@
         </div>
         <nav>
             <a href="{% url blackbook.views.index %}">Home</a> |
-            <a href="">Photos</a> |
-            <a href="">Videos</a> |
-            <a href="">Contact</a>
+            <a href="{% url blackbook.views.show_category "street" %}">Photos</a> |
+            <a href="{% url blackbook.views.show_video %}">Videos</a> |
+            {% load flatpages %}
+            {% get_flatpages as flatpages %}
+            {% for page in flatpages %}
+                <a href="{{ page.url }}">{{ page.title }}</a> |
+            {% endfor %}
+
     </header>
     <hr/>
   {% block content %}{% endblock %}  
