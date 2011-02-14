@@ -7,6 +7,14 @@
 {% endblock%}
 {% block content %}
 <article>
+    <nav>
+        <ul>
+            <li>Videos: </li>
+            {% for video in object_list %}
+            <li><a href="{% url blackbook.views.show_video video.slug %}">{{ video.title }}</a> | </li>
+            {% endfor %}
+        </ul>        
+    </nav>
     <header>
         <h2>{{ object.title }}</h2>
     </header>
@@ -18,5 +26,6 @@
 </article>
 {% endblock %}
 
-<!-- Youtube embedded player //-->
+<!-- Youtube embedded player 
 <iframe title="YouTube video player" width="480" height="390" src="http://www.youtube.com/embed/WArLq-LZdwI" frameborder="0" allowfullscreen></iframe>
+//-->
