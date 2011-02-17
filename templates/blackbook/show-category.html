@@ -9,7 +9,6 @@
 <article>
     <nav>
         <ul>
-            <li>Categories: </li>
             {% for category in categories %}
             <li><a href="{% url blackbook.views.show_category category.slug %}">{{ category.name }}</a> | </li>
             {% endfor %}

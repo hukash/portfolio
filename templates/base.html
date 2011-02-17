@@ -11,7 +11,7 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title></title>
+  <title>{% block title %} / Christopher Pilarski{% endblock %}</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -36,14 +36,14 @@
         <div id="title">
             <h1>Christopher Pilarski</h1>
         </div>
-        <nav>
+        <nav id="main-nav">
             <a href="{% url blackbook.views.index %}">Home</a> |
             <a href="{% url blackbook.views.show_category %}">Photos</a> |
-            <a href="{% url blackbook.views.show_video %}">Videos</a> |
+            <a href="{% url blackbook.views.show_video %}">Videos</a>
             {% load flatpages %}
             {% get_flatpages as flatpages %}
             {% for page in flatpages %}
-                <a href="{{ page.url }}">{{ page.title }}</a> |
+                | <a href="{{ page.url }}">{{ page.title }}</a>
             {% endfor %}
 
     </header>

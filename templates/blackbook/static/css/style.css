@@ -75,7 +75,7 @@ pre, code, kbd, samp { font-family: monospace, sans-serif; }
 
 body, select, input, textarea {
   /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
-  color: #666;
+  color: #eee;
   /* set your base font here, to apply evenly */
   /* font-family: Georgia, serif;  */
 }
@@ -90,8 +90,11 @@ html { overflow-y: scroll; }
 /* accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
 
-a, a:active, a:visited { color: #777; }
-a:hover { color: #036; }
+a, a:active, a:visited { 
+    color: #eee; 
+    text-decoration: none;
+}
+a:hover, a:active { color: #ffec01; }
 
 
 ul, ol { margin-left: 2em; }
@@ -162,7 +165,8 @@ button {  width: auto; overflow: visible; }
     --------------  */
 body {
     margin: 24px;
-    background-color: #111;
+	background:#0e0e0e url(/static/img/back.jpg) no-repeat 0 0;
+    
 }
 
 header {
@@ -177,6 +181,7 @@ header #title {
 header nav {
     float: right;
     text-align: right;
+    text-transform: uppercase;
 }
 
 article nav ul li {
@@ -202,7 +207,7 @@ hr {
 .huge, h1 {
 	font-size: 68px;
 	line-height: 72px;
-	letter-spacing: -1px;
+	letter-spacing: -5px;
 }
 
 .large, h2 {

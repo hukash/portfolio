@@ -177,6 +177,7 @@ header #title {
 header nav {
     float: right;
     text-align: right;
+    text-transform: capitalize;
 }
 
 article nav ul li {

@@ -20,7 +20,7 @@
 	position:relative;
 	/* margin:30px 30px 60px 30px; */
     margin: auto;
-	background:#202834 url(/media/img/loading.gif) no-repeat 50% 50%;
+	background:#202834 url(/static/img/loading.gif) no-repeat 50% 50%;
 	-moz-box-shadow:0px 0px 10px #333;
 	-webkit-box-shadow:0px 0px 10px #333;
 	box-shadow:0px 0px 10px #333;
@@ -41,7 +41,7 @@
 	display:block;
 	width:10px;
 	height:10px;
-	background:url(/media/img/bullets.png) no-repeat;
+	background:url(/static/img/bullets.png) no-repeat;
 	text-indent:-9999px;
 	border:0;
 	margin-right:3px;
@@ -55,7 +55,7 @@
 	display:block;
 	width:32px;
 	height:34px;
-	background:url(/media/img/arrows.png) no-repeat;
+	background:url(/static/img/arrows.png) no-repeat;
 	text-indent:-9999px;
 	border:0;
 }
