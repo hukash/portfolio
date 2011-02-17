@@ -9,3 +9,4 @@
 eggs
 dist
 media/photos
+local_settings.py

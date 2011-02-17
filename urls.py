@@ -5,6 +5,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^$', 'blackbook.views.index'),
     (r'^blackbook/', include('blackbook.urls')),
     (r'^grappelli/', include('grappelli.urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
