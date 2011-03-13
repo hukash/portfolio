@@ -4,9 +4,11 @@
  */
 
 #landscape {
-    position: relative;
-    margin: 20px auto;
-    width: 816px;
+    /* position: relative; */
+    /* float: left; */
+    margin: 12px auto;
+    width: 874px;
+    height: 643px;
 }
 
 #portrait {
