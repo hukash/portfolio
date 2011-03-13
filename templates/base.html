@@ -20,8 +20,6 @@
 
   <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
 
   <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="/static/css/style.css?v=2">
@@ -33,24 +31,30 @@
 
 <body>
     <header>
-        <div id="title">
-            <h1>Christopher Pilarski</h1>
-        </div>
-        <nav id="main-nav">
-            <a href="{% url blackbook.views.index %}">Home</a> |
-            <a href="{% url blackbook.views.show_category %}">Photos</a> |
-            <a href="{% url blackbook.views.show_video %}">Videos</a>
+       <div id="site-title">
+           <div id="title">
+               <h2>Christopher Pilarski </h2>
+           </div>
+           <div id="subtitle">
+               Photography
+           </div>
+       </div>
+       <nav id="main-nav">
+            <a href="{% url blackbook.views.index %}">Home </a> 
+            <a href="{% url blackbook.views.show_category %}">Photos </a>
+            <a href="{% url blackbook.views.show_video %}">Videos </a>
             {% load flatpages %}
             {% get_flatpages as flatpages %}
             {% for page in flatpages %}
-                | <a href="{{ page.url }}">{{ page.title }}</a>
+                <a href="{{ page.url }}">{{ page.title }} </a>
             {% endfor %}
 
     </header>
-    <hr/>
   {% block content %}{% endblock %}  
   {% block flatpage.content %}{% endblock %}  
-
+  <footer>
+    All content copyright - &#169 2011 Christopher Pilarski
+  </footer>
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->

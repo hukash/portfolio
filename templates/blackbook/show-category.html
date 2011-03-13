@@ -10,11 +10,11 @@
     <nav>
         <ul>
             {% for category in categories %}
-            <li><a href="{% url blackbook.views.show_category category.slug %}">{{ category.name }}</a> | </li>
+            <li><a href="{% url blackbook.views.show_category category.slug %}">{{ category.name }}</a> </li>
             {% endfor %}
         </ul>
     </nav>
-    <h3>{{ category.name }}</h3>
+    <h3 align="center">~ {{ category.name }} ~</h3>
     <!-- Content -->
     <div id="{{ category.format }}">
         <div id="slider">
@@ -33,7 +33,7 @@
   // Define your slider option    
   $(window).load(function() {
     $('#slider').nivoSlider({
-effect:'fade',
+      effect:'fade',
       animSpeed:500, // Slide transition speed
       pauseTime:10000,
       startSlide:0, // Set starting Slide (0 index)
